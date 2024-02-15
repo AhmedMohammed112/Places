@@ -42,4 +42,5 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-/lib/Utilies/Shared
+/lib/Utilies/Shared/constants.dart
+/android/app/src/main
