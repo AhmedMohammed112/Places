@@ -9,6 +9,7 @@ import 'package:my_places/Presentation/Screens/select_on_map_screen.dart';
 import '../../Models/place_model.dart';
 import '../../Presentation/Screens/add_places_screen.dart';
 import '../../Presentation/Screens/places_layout.dart';
+import '../../Presentation/Screens/places_suggestions_screen.dart';
 import '../../Presentation/Screens/selected_category_screen.dart';
 
 class AppRoutes {
@@ -19,13 +20,15 @@ class AppRoutes {
   static const String selectOnMap = '/select_on_map';
   static const String categoriesScreen = '/categories';
   static const String selectedCategoryScreen = '/selected_category';
+  static const String placeSuggestions = '/place_suggestions';
 }
 
 class RouterManager {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case AppRoutes.addPlace:
-        return PageSlideTransition(page: const AddPlaceScreen());
+        final place = settings.arguments as Place?;
+        return PageSlideTransition(page: AddPlaceScreen(place: place));
       case AppRoutes.places:
         return PageSlideTransition(page: const PlacesScreen());
       case AppRoutes.placeDetail:
@@ -42,6 +45,9 @@ class RouterManager {
       case AppRoutes.selectedCategoryScreen:
         final category = settings.arguments as String;
         return PageSlideTransition(page: FilteredPlaces(category: category));
+        case AppRoutes.placeSuggestions:
+          final query = settings.arguments as int;
+        return PageSlideTransition(page: SuggestedPlacesScreen(index: query));
       default:
         return PageSlideTransition(page: const PlacesScreen());
     }

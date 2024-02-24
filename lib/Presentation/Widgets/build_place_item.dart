@@ -8,75 +8,6 @@ import '../../Common/Resources/values_manager.dart';
 import '../../Models/place_model.dart';
 import 'my_text.dart';
 
-class BuildPlaceItem extends StatelessWidget {
-  final Place place;
-  const BuildPlaceItem({Key? key, required this.place,}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedPhysicalModelExample(
-      widget: InkWell(
-        onTap: () {
-          Navigator.pushNamed(context, AppRoutes.placeDetail, arguments: place);
-        },
-        child: Padding(
-          padding: const EdgeInsets.only(top: AppPadding.p15),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              ListTile(
-                  leading: CircleAvatar(
-                    radius: AppSizes.s30,
-                    backgroundColor: Theme.of(context).primaryColor,
-                    child: MyText(text: place.image.length.toString(),style: Theme.of(context).textTheme.displayLarge),
-                  ),
-                  title: MyText(
-                    text: place.name,
-                    size: 17, style: Theme.of(context).textTheme.labelMedium
-                  ),
-                  trailing: IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.navigate_next,
-                      size: 30,
-                      color: Theme.of(context).primaryColor,
-                    ),
-                  ),
-                  subtitle: MyText(
-                    text: place.location.address,
-                    color: ColorManager.grey,
-                    size: 12,
-                      style: Theme.of(context).textTheme.labelSmall
-                  )),
-              Padding(
-                padding: const EdgeInsets.all(AppPadding.p20),
-                child: MyText(
-                  text: place.description,
-                    style: Theme.of(context).textTheme.labelMedium
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-      primaryColor: ColorManager.newPrimary,
-      secondaryColor: ColorManager.newPrimary,
-    );
-
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
 class BuildNewPlaceItem extends StatelessWidget {
   final Place place;
   const BuildNewPlaceItem({Key? key, required this.place,}) : super(key: key);
@@ -90,7 +21,7 @@ class BuildNewPlaceItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-                  CarouselSlider(
+              CarouselSlider(
                       options: CarouselOptions(
                         height: AppSizes.s200,
                         viewportFraction: 1.0,
@@ -104,7 +35,7 @@ class BuildNewPlaceItem extends StatelessWidget {
                         enlargeCenterPage: true,
                         scrollDirection: Axis.horizontal,
                       ),
-                      items: place.image.map((i) {
+                      items: place.image!.map((i) {
                         return Builder(
                           builder: (BuildContext context) {
                             return ClipRRect(

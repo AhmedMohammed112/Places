@@ -19,6 +19,7 @@ class ColorManager
   static const Color green = Colors.green;
   static const Color newPrimary = Colors.indigo;
   static  Color lightPurple = Colors.deepPurple[50]!;
+  static  Color deepPurple = Colors.deepPurple;
   static const Color deepPurpleAccent = Colors.deepPurpleAccent;
   static const Color blueAccent = Colors.blueAccent;
   static const Color pinkAccent = Colors.pinkAccent;

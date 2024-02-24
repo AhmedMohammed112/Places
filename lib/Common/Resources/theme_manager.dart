@@ -9,9 +9,9 @@ ThemeData getThemeData() {
     primarySwatch: Colors.grey,
     scaffoldBackgroundColor: ColorManager.white,
     //main color
-    primaryColor: ColorManager.lightGrey,
-    primaryColorLight: ColorManager.black,
-    primaryColorDark: ColorManager.black,
+    primaryColor: ColorManager.darkGrey,
+    primaryColorLight: ColorManager.lightPurple,
+    primaryColorDark: ColorManager.newPrimary,
     disabledColor: ColorManager.lightGrey,
 
 
@@ -49,7 +49,6 @@ ThemeData getThemeData() {
     ),
 
 
-
     //Button theme
     buttonTheme: const ButtonThemeData(
       shape: StadiumBorder(),
@@ -70,7 +69,7 @@ ThemeData getThemeData() {
         color: ColorManager.black,
       ),
       indicatorColor: ColorManager.lightGrey,
-      indicator: BoxDecoration(
+      indicator: const BoxDecoration(
 
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(AppSizes.s8),
@@ -140,7 +139,7 @@ ThemeData getThemeData() {
     //Text theme
     textTheme: TextTheme(
         displayLarge: semiBoldText(
-          fontSize: FontSizes.s16,
+          fontSize: FontSizes.s20,
           color: ColorManager.black,
         ),
         headlineMedium: regularText(
@@ -169,20 +168,20 @@ ThemeData getThemeData() {
 
       // change text input color
       suffixStyle: regularText(
-        color: ColorManager.black,
-        fontSize: FontSizes.s14,
+        color: ColorManager.white,
+        fontSize: FontSizes.s20,
       ),
 
       //Label Text Style
       labelStyle: regularText(
         color: ColorManager.black,
-        fontSize: FontSizes.s18,
+        fontSize: FontSizes.s20,
       ),
 
 
       //Hint Text Style
       hintStyle: mediumText(
-        color: ColorManager.black,
+        color: ColorManager.white,
         fontSize: FontSizes.s14,
       ),
 
@@ -254,7 +253,7 @@ ThemeData getDarkThemeData() {
     scaffoldBackgroundColor: ColorManager.indigo,
     //main color
     primaryColor: ColorManager.newPrimary,
-    primaryColorLight: ColorManager.lightPurple,
+    primaryColorLight: ColorManager.newPrimary,
     primaryColorDark: ColorManager.newPrimary,
     disabledColor: ColorManager.lightGrey,
 
@@ -331,6 +330,13 @@ ThemeData getDarkThemeData() {
       color: ColorManager.white,
     ),
 
+    iconButtonTheme: IconButtonThemeData(
+      style: ButtonStyle(
+        iconColor: MaterialStateProperty.all(ColorManager.white),
+      ),
+    ),
+
+
     checkboxTheme: CheckboxThemeData(
       fillColor: MaterialStateProperty.all(ColorManager.white),
       checkColor: MaterialStateProperty.all(ColorManager.newPrimary),
@@ -366,7 +372,7 @@ ThemeData getDarkThemeData() {
         color: ColorManager.white,
       ),
       indicatorColor: ColorManager.newPrimary,
-      indicator: BoxDecoration(
+      indicator: const BoxDecoration(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(AppSizes.s8),
           topRight: Radius.circular(AppSizes.s8),

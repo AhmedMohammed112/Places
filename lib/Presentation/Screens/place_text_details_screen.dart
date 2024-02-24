@@ -87,7 +87,7 @@ class PlaceTextDetails extends ConsumerWidget {
                   enlargeCenterPage: true,
                   scrollDirection: Axis.horizontal,
                 ),
-                items: place.image.map((i) {
+                items: place.image!.map((i) {
                   return Builder(
                     builder: (BuildContext context) {
                       return Container(
@@ -190,7 +190,7 @@ Widget placeDetails({required BuildContext context, required Place place}) {
           ),
           Wrap(
             children: place.types
-                .map(
+                !.map(
                   (e) => Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: MyElevationButton(

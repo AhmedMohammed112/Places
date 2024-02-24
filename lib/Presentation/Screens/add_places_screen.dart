@@ -15,7 +15,8 @@ import '../Widgets/my_text.dart';
 import '../Widgets/my_text_field.dart';
 
 class AddPlaceScreen extends ConsumerStatefulWidget {
-  const AddPlaceScreen({Key? key}) : super(key: key);
+  final Place? place;
+  const AddPlaceScreen({Key? key, this.place}) : super(key: key);
 
   @override
   ConsumerState<AddPlaceScreen> createState() => _AddPlaceScreenState();
@@ -30,9 +31,6 @@ class _AddPlaceScreenState extends ConsumerState<AddPlaceScreen> {
   PlaceLocation? myPickedLocation;
   List<File> images = [];
   List<String> placeTypes = [];
-
-
-
 
   void _savePlace() { 
     final title = titleController.text;
@@ -69,13 +67,19 @@ class _AddPlaceScreenState extends ConsumerState<AddPlaceScreen> {
 
   @override
   Widget build(BuildContext context) {
+    if(widget.place != null) {
+      titleController.text = widget.place!.name;
+      descriptionController.text = widget.place!.description;
+      myPickedLocation = widget.place!.location;
+    }
+
+
     return Scaffold(
       appBar: AppBar(
         leading: const BackArrow(),
         title: MyText(text:'Add Place',size: AppSizes.s20,style: Theme.of(context).textTheme.labelMedium),
         centerTitle: true,
       ),
-
 
       body: Form(
         key: formKey,

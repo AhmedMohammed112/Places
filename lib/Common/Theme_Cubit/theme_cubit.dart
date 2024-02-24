@@ -9,15 +9,15 @@ class ThemeProvider extends StateNotifier<bool> {
 
   void changeTheme({bool? fromShared}) {
     if (fromShared != null) {
+      // change the theme and save it to shared preferences and state
       isDark = fromShared;
-      state = isDark;
-    } else {
-      print('isDark: $fromShared');
-      isDark = !isDark;
-      print('isDark: $isDark');
       SharedPref.saveData(key: 'IsDark', value: isDark);
       state = isDark;
-      print('state: $state');
+    } else {
+      // change the theme and save it to shared preferences and state
+      isDark = !isDark;
+      SharedPref.saveData(key: 'IsDark', value: isDark);
+      state = isDark;
     }
   }
 }

@@ -1,11 +1,6 @@
-import 'dart:convert';
-import 'dart:io';
-
 import 'package:my_places/Utilies/Local_Data_Source/local_data_source.dart';
 import 'package:riverpod/riverpod.dart';
 import '../../Models/place_model.dart';
-import 'package:path_provider/path_provider.dart' as sysPaths;
-import 'package:path/path.dart' as path;
 import 'package:sqflite/sqflite.dart' as sql;
 
 class UserPlaceNotifier extends StateNotifier<List<Place>> {
@@ -19,7 +14,6 @@ class UserPlaceNotifier extends StateNotifier<List<Place>> {
     openDatabaseAndCreateTables();
     insertData(place: place);
     getData();
-
 
     state = [...state, place];
   }
@@ -40,13 +34,14 @@ class UserPlaceNotifier extends StateNotifier<List<Place>> {
 
   void deletePlace({required Place place}) async
   {
-    //delete from database 
     localDataSource.deleteData(place: place);
+    getData();
   } 
 
 void addToFavourites({required Place place}) async
 {
   localDataSource.addToFavourites(place: place);
+  state = [...state];
 }
 
 } 

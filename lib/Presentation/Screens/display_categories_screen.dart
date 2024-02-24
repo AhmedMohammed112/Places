@@ -63,12 +63,12 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
             padding: const EdgeInsets.all(8.0),
             child: InkWell(
               onTap: () {
+
                 Navigator.pushNamed(context, AppRoutes.selectedCategoryScreen,arguments: placeTypes![index]);
               },
               child: Container(
-
                   decoration: BoxDecoration(
-                    color: ColorManager.newPrimary.withAlpha(AppSizes.s120.toInt()),
+                    color: Theme.of(context).primaryColorLight,
                     borderRadius: BorderRadius.circular(AppSizes.s20),
                     border: Border.all(color: ColorManager.newPrimary,width: AppSizes.s2)
                   ),

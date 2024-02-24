@@ -89,7 +89,7 @@ class _LocationInputState extends State<LocationInput> {
           height: AppSizes.s12,
         ),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          //mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               children: [

@@ -1,6 +1,7 @@
 import'package:flutter/Material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_places/Common/Resources/values_manager.dart';
+import '../../Common/Resources/router_manager.dart';
 import '../../Common/shared_preferences.dart';
 import '../../Controller/places_provider.dart';
 import '../../Models/place_model.dart';
@@ -9,7 +10,6 @@ import '../../Utilies/Shared/shared_widgets.dart';
 import '../Widgets/build_place_item.dart';
 import '../Widgets/my_text.dart';
 import '../Widgets/places_loading.dart';
-import 'add_places_screen.dart';
 
 class FilteredPlaces extends ConsumerStatefulWidget {
   final String category;
@@ -61,6 +61,12 @@ class _AllPlacesState extends ConsumerState<FilteredPlaces> {
                   ]);
             },
             icon: const Icon(Icons.delete),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, AppRoutes.placeSuggestions,arguments: categories.indexOf(widget.category));
+            },
+            icon: const Icon(Icons.settings_suggest),
           )
         ],
       ),
@@ -92,7 +98,7 @@ List<Place> filterCategories({required List<Place> places,required String type})
 {
   List<Place> filteredPlaces = [];
   for (var place in places) {
-    if(place.types.contains(type))
+    if(place.types!.contains(type))
     {
       filteredPlaces.add(place);
     }

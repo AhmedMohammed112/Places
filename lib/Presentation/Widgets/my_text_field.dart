@@ -6,18 +6,18 @@ import 'package:my_places/Common/Resources/color_manager.dart';
 import 'my_container.dart';
 
 class MyTextFormField extends StatelessWidget {
-  TextEditingController controller;
-  Function(String value)? validator;
-  Function(String value)? myOnFieldSubmitted;
-  Function(String value)? myOnChanged;
-  Function()? onCompleted;
+  final TextEditingController controller;
+  final Function(String value)? validator;
+  final Function(String value)? myOnFieldSubmitted;
+  final Function(String value)? myOnChanged;
+  final Function()? onCompleted;
   // on tap function
-  Function()? onTap;
-  FocusNode? focusNode;
-  Icon? prefixIcon;
-  Widget? suffixIcon;
-  String? labelText;
-  String? hintText;
+  final Function()? onTap;
+  final FocusNode? focusNode;
+  final Icon? prefixIcon;
+  final Widget? suffixIcon;
+  final String? labelText;
+  final String? hintText;
   bool secureText = false;
   var type = TextInputType.text;
   double height = 70;
@@ -26,10 +26,10 @@ class MyTextFormField extends StatelessWidget {
   Color color = Colors.white;
   double radius;
   Color borderColor = Colors.grey;
-  bool border;
+  final bool border;
 
 
-  MyTextFormField({
+  MyTextFormField({super.key,
     required this.controller,
     this.validator,
      this.myOnChanged,
@@ -82,9 +82,6 @@ class MyTextFormField extends StatelessWidget {
           suffixIcon: suffixIcon,
           labelText: labelText,
           hintText: hintText,
-            contentPadding: const EdgeInsets.symmetric(horizontal: 10),
-          // filled: true,
-          // fillColor: color,
         ),
       ),
     );

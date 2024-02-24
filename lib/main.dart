@@ -47,7 +47,7 @@ class _MyAppState extends ConsumerState<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      themeMode:ref.watch(themeProvider.notifier).isDark ? ThemeMode.dark : ThemeMode.light,
+      themeMode: ref.watch(themeProvider.notifier).isDark ? ThemeMode.dark : ThemeMode.light,
       theme: getThemeData(),
       darkTheme: getDarkThemeData(),
       onGenerateRoute: RouterManager.generateRoute,
