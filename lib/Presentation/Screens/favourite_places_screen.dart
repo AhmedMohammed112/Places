@@ -29,7 +29,7 @@ class _FavouritePlacesState extends ConsumerState<FavouritePlaces> {
   Widget build(BuildContext context) {
     final retrievedPlaces = ref.watch(userPlaceProvider);
 
-    final places = filterFavourites(places: retrievedPlaces);
+    final places = _filterFavourites(places: retrievedPlaces);
     return FutureBuilder(
       future: _futurePlaces,
       builder: (context, snapshot) {
@@ -52,15 +52,16 @@ class _FavouritePlacesState extends ConsumerState<FavouritePlaces> {
       },
     );
   }
-} 
-List<Place> filterFavourites({required List<Place> places}) 
+}
+
+List<Place> _filterFavourites({required List<Place> places})
 {
-  List<Place> favouritePlaces = []; 
+  List<Place> favouritePlaces = [];
   for (var place in places) {
         if(place.isFavourite)
         {
           favouritePlaces.add(place);
-        }    
+        }
   }
   return favouritePlaces;
 }

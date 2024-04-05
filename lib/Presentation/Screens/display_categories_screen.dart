@@ -2,7 +2,6 @@ import 'package:flutter/Material.dart';
 import 'package:my_places/Common/Resources/color_manager.dart';
 import 'package:my_places/Common/Resources/router_manager.dart';
 import 'package:my_places/Common/Resources/values_manager.dart';
-import 'package:my_places/Presentation/Screens/add_places_screen.dart';
 import 'package:my_places/Presentation/Widgets/back_arrow.dart';
 import 'package:my_places/Presentation/Widgets/my_text.dart';
 import 'package:my_places/Presentation/Widgets/my_text_field.dart';
@@ -60,10 +59,9 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         crossAxisCount: 2,
         children: List.generate(placeTypes!.length, (index) {
           return Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(AppPadding.p8,),
             child: InkWell(
               onTap: () {
-
                 Navigator.pushNamed(context, AppRoutes.selectedCategoryScreen,arguments: placeTypes![index]);
               },
               child: Container(

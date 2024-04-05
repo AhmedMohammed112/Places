@@ -41,7 +41,7 @@ class UserPlaceNotifier extends StateNotifier<List<Place>> {
 void addToFavourites({required Place place}) async
 {
   localDataSource.addToFavourites(place: place);
-  state = [...state];
+  getData();
 }
 
 } 

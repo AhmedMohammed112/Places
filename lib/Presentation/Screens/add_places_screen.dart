@@ -35,7 +35,7 @@ class _AddPlaceScreenState extends ConsumerState<AddPlaceScreen> {
   void _savePlace() { 
     final title = titleController.text;
     final description = descriptionController.text;
-    final location = myPickedLocation ??const PlaceLocation(latitude: 0, longitude: 0, address: '');
+    final location = myPickedLocation!;
     final place = Place(
         name: title,
         description: description,
@@ -72,7 +72,6 @@ class _AddPlaceScreenState extends ConsumerState<AddPlaceScreen> {
       descriptionController.text = widget.place!.description;
       myPickedLocation = widget.place!.location;
     }
-
 
     return Scaffold(
       appBar: AppBar(

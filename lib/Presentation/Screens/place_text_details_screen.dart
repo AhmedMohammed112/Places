@@ -2,7 +2,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/Material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_places/Common/Resources/router_manager.dart';
-import 'package:my_places/Presentation/Widgets/my_container.dart';
 import 'package:my_places/Presentation/Widgets/my_elevation_button.dart';
 import '../../Common/Resources/color_manager.dart';
 import '../../Common/Resources/values_manager.dart';

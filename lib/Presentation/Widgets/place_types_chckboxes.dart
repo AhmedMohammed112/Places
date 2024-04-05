@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/Material.dart';
 import 'package:my_places/Common/Resources/color_manager.dart';
 import 'package:my_places/Presentation/Widgets/line.dart';

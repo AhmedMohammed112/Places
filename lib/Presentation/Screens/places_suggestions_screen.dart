@@ -3,11 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_places/Controller/places_suggestios_provider.dart';
 import 'package:my_places/Presentation/Widgets/build_suggestion_place_item.dart';
 import '../../Common/Resources/values_manager.dart';
-import '../../Controller/places_provider.dart';
 import '../../Utilies/Shared/constants.dart';
-import '../Widgets/build_place_item.dart';
 import '../Widgets/my_text.dart';
-import '../Widgets/places_loading.dart';
 import '../Widgets/suggested_places_loading.dart';
 
 class SuggestedPlacesScreen extends ConsumerStatefulWidget {

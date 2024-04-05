@@ -10,7 +10,6 @@ import 'package:my_places/Presentation/Widgets/my_text.dart';
 import 'package:my_places/Presentation/Widgets/my_text_field.dart';
 import '../../Utilies/Shared/constants.dart';
 import '../../Utilies/Shared/network_helber.dart';
-import '../../Utilies/Shared/shared_widgets.dart';
 import '../Widgets/line.dart';
 
 

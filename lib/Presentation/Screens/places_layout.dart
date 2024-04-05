@@ -1,5 +1,4 @@
 import 'package:flutter/Material.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_places/Common/Resources/values_manager.dart';
 import 'package:my_places/Common/Theme_Cubit/theme_cubit.dart';
@@ -60,7 +59,7 @@ class _PlacesScreenState extends ConsumerState<PlacesScreen> {
       ),
 
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(AppPadding.p8,),
         child: Column(
           children: [
             DefaultTabController(
@@ -75,7 +74,7 @@ class _PlacesScreenState extends ConsumerState<PlacesScreen> {
               // design the tabs
                 indicatorSize: TabBarIndicatorSize.tab,
                 indicator: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(AppSizes.s20,),
                   color: Theme.of(context).primaryColor,
                 ),
                 // remove the horizontal line under the tabs
@@ -98,7 +97,7 @@ class _PlacesScreenState extends ConsumerState<PlacesScreen> {
       // Add New Place Button
       floatingActionButton: FloatingActionButton(
         shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(20))),
+            borderRadius: BorderRadius.all(Radius.circular(AppSizes.s20,))),
         onPressed: () {
           Navigator.pushNamed(context, AppRoutes.addPlace);
         },
