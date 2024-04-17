@@ -3,25 +3,16 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../shared_preferences.dart';
 
 class ThemeProvider extends StateNotifier<bool> {
-  ThemeProvider() : super(false);
+  ThemeProvider(bool isDark) : super(isDark);
 
-  bool isDark = false;
-
-  void changeTheme({bool? fromShared}) {
-    if (fromShared != null) {
-      // change the theme and save it to shared preferences and state
-      isDark = fromShared;
-      SharedPref.saveData(key: 'IsDark', value: isDark);
-      state = isDark;
-    } else {
-      // change the theme and save it to shared preferences and state
-      isDark = !isDark;
-      SharedPref.saveData(key: 'IsDark', value: isDark);
-      state = isDark;
-    }
+  void changeTheme() {
+    state = !state;
+    print("Theme Changed to: $state");
+    SharedPref.saveData(key: 'IsDark', value: state);
   }
 }
 
 final themeProvider = StateNotifierProvider<ThemeProvider, bool>((ref) {
-  return ThemeProvider();
+  bool isDark = SharedPref.getData(key: 'IsDark') ?? false;
+  return ThemeProvider(isDark);
 });

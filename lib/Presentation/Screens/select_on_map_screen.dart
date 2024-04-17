@@ -124,19 +124,19 @@ class _SelectOnMapScreenState extends State<SelectOnMapScreen> {
                 });
               },
                 hintText: "Search your location",
-                prefixIcon: const Icon(Icons.location_pin,color: ColorManager.white,),
-                suffixIcon: isSearching == true ? const Icon(Icons.search,color: ColorManager.white,) : IconButton(
+                prefixIcon: const Icon(Icons.location_pin,),
+                suffixIcon: isSearching == true ? const Icon(Icons.search,) : IconButton(
                   onPressed: () {
                     setState(() {
                       placeController.clear();
                       isSearching = true;
                     });
                   },
-                  icon: const Icon(Icons.clear,color: ColorManager.white,),
+                  icon: const Icon(Icons.clear,),
                 ),
                 border: true,
             ),
-            const Line(),
+            const SizedBox(height: 10,),
             isSearching == true ? Expanded(
               child: ListView.builder(
 

@@ -43,3 +43,4 @@ class _AllPlacesState extends ConsumerState<AllPlaces> {
     );
   }
 }
+

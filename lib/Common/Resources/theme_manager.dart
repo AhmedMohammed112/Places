@@ -98,16 +98,22 @@ ThemeData getThemeData() {
     ),
 
     iconTheme: const IconThemeData(
-      color: ColorManager.black,
+      color: ColorManager.newPrimary,
+    ),
+
+    iconButtonTheme: IconButtonThemeData(
+      style: ButtonStyle(
+        iconColor: MaterialStateProperty.all(ColorManager.newPrimary),
+      ),
     ),
 
 
     checkboxTheme: CheckboxThemeData(
-      fillColor: MaterialStateProperty.all(ColorManager.newPrimary),
-      checkColor: MaterialStateProperty.all(ColorManager.white),
+      fillColor: MaterialStateProperty.all(ColorManager.white),
+      checkColor: MaterialStateProperty.all(ColorManager.newPrimary),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(AppSizes.s4),
-       side: BorderSide(
+       side: const BorderSide(
          color: ColorManager.newPrimary,
          width: AppSizes.s2,
        ),
@@ -115,11 +121,11 @@ ThemeData getThemeData() {
     ),
 
     listTileTheme: const ListTileThemeData(
-      iconColor: ColorManager.black,
+      iconColor: ColorManager.newPrimary,
       leadingAndTrailingTextStyle: TextStyle(color: ColorManager.white),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.all(
-          Radius.circular(AppSizes.s8),
+          Radius.circular(AppSizes.s16),
         ),
       ),
     ),
@@ -140,7 +146,7 @@ ThemeData getThemeData() {
     textTheme: TextTheme(
         displayLarge: semiBoldText(
           fontSize: FontSizes.s20,
-          color: ColorManager.black,
+          color: ColorManager.newPrimary,
         ),
         headlineMedium: regularText(
           fontSize: FontSizes.s14,
@@ -148,40 +154,41 @@ ThemeData getThemeData() {
         ),
         titleSmall: mediumText(
           fontSize: FontSizes.s14,
-          color: ColorManager.black,
+          color: ColorManager.newPrimary,
         ),
         labelLarge: regularText(
-          color: ColorManager.black,
+          color: ColorManager.newPrimary,
         ),
         bodyLarge: regularText(
-          color: ColorManager.black,
+          color: ColorManager.newPrimary,
         ),
         labelSmall:
             boldText(color: ColorManager.grey, fontSize: AppSizes.s12)),
 
     //Input theme Text Form Field
     inputDecorationTheme: InputDecorationTheme(
-      contentPadding: const EdgeInsets.all(AppPadding.p8),
+      contentPadding: const EdgeInsets.all(AppPadding.p16,),
       iconColor: ColorManager.black,
-      prefixIconColor: ColorManager.white,
-      suffixIconColor: ColorManager.white,
+      prefixIconColor: ColorManager.newPrimary,
+      suffixIconColor: ColorManager.newPrimary,
+
 
       // change text input color
       suffixStyle: regularText(
-        color: ColorManager.white,
+        color: ColorManager.newPrimary,
         fontSize: FontSizes.s20,
       ),
 
       //Label Text Style
       labelStyle: regularText(
-        color: ColorManager.black,
+        color: ColorManager.newPrimary,
         fontSize: FontSizes.s20,
       ),
 
 
       //Hint Text Style
       hintStyle: mediumText(
-        color: ColorManager.white,
+        color: ColorManager.newPrimary,
         fontSize: FontSizes.s14,
       ),
 
@@ -193,13 +200,13 @@ ThemeData getThemeData() {
 
       // input color
       helperStyle: regularText(
-        color: ColorManager.white,
+        color: ColorManager.newPrimary,
         fontSize: FontSizes.s14,
       ),
 
 
       focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(AppSizes.s8),
+        borderRadius: BorderRadius.circular(AppSizes.s16),
         borderSide: const BorderSide(
           color: ColorManager.newPrimary,
           width: AppSizes.s1,
@@ -208,7 +215,7 @@ ThemeData getThemeData() {
 
       //Enabled Border Style
       enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(AppSizes.s8),
+        borderRadius: BorderRadius.circular(AppSizes.s16),
         borderSide: const BorderSide(
           color: ColorManager.newPrimary,
           width: AppSizes.s1,
@@ -217,7 +224,7 @@ ThemeData getThemeData() {
 
       //Disabled Border Style
       disabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(AppSizes.s8),
+        borderRadius: BorderRadius.circular(AppSizes.s16),
         borderSide: const BorderSide(
           color: ColorManager.newPrimary,
           width: AppSizes.s1,
@@ -227,7 +234,7 @@ ThemeData getThemeData() {
 
       //Error Border Style
       errorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(AppSizes.s8),
+        borderRadius: BorderRadius.circular(AppSizes.s16),
         borderSide: const BorderSide(
           color: ColorManager.error,
           width: AppSizes.s1,
@@ -236,7 +243,7 @@ ThemeData getThemeData() {
 
       //Focused Error Border Style
       focusedErrorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(AppSizes.s8),
+        borderRadius: BorderRadius.circular(AppSizes.s16),
         borderSide: const BorderSide(
           color: ColorManager.newPrimary,
           width: AppSizes.s1,
@@ -342,7 +349,7 @@ ThemeData getDarkThemeData() {
       checkColor: MaterialStateProperty.all(ColorManager.newPrimary),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(AppSizes.s4),
-        side: BorderSide(
+        side: const BorderSide(
           color: ColorManager.newPrimary,
           width: AppSizes.s2,
         ),
@@ -354,7 +361,7 @@ ThemeData getDarkThemeData() {
       leadingAndTrailingTextStyle: TextStyle(color: ColorManager.white),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.all(
-          Radius.circular(AppSizes.s8),
+          Radius.circular(AppSizes.s16),
         ),
       ),
     ),
@@ -451,7 +458,7 @@ ThemeData getDarkThemeData() {
 
 
       focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(AppSizes.s8),
+        borderRadius: BorderRadius.circular(AppSizes.s16),
         borderSide: const BorderSide(
           color: ColorManager.newPrimary,
           width: AppSizes.s1,
@@ -460,7 +467,7 @@ ThemeData getDarkThemeData() {
 
       //Enabled Border Style
       enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(AppSizes.s8),
+        borderRadius: BorderRadius.circular(AppSizes.s16),
         borderSide: const BorderSide(
           color: ColorManager.newPrimary,
           width: AppSizes.s1,
@@ -469,7 +476,7 @@ ThemeData getDarkThemeData() {
 
       //Disabled Border Style
       disabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(AppSizes.s8),
+        borderRadius: BorderRadius.circular(AppSizes.s16),
         borderSide: const BorderSide(
           color: ColorManager.newPrimary,
           width: AppSizes.s1,
@@ -479,7 +486,7 @@ ThemeData getDarkThemeData() {
 
       //Error Border Style
       errorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(AppSizes.s8),
+        borderRadius: BorderRadius.circular(AppSizes.s16),
         borderSide: const BorderSide(
           color: ColorManager.error,
           width: AppSizes.s1,
@@ -488,7 +495,7 @@ ThemeData getDarkThemeData() {
 
       //Focused Error Border Style
       focusedErrorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(AppSizes.s8),
+        borderRadius: BorderRadius.circular(AppSizes.s16),
         borderSide: const BorderSide(
           color: ColorManager.newPrimary,
           width: AppSizes.s1,

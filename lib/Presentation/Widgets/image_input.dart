@@ -130,7 +130,7 @@ class _ImageInputState extends State<ImageInput> {
           onPressed: () {
             takePicture();
           },
-          child: MyText(text:'Add Image',style: Theme.of(context).textTheme.labelMedium),
+          child: MyText(text:'Add Image',style: Theme.of(context).textTheme.displayLarge),
         ),
       ],
     );

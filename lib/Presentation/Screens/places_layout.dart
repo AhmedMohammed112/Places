@@ -43,14 +43,11 @@ class _PlacesScreenState extends ConsumerState<PlacesScreen> {
         ),
         actions: [
           IconButton(onPressed: () {
-                // change the theme
-            //ref.read(themeProvider.notifier).changeTheme();
             Navigator.pushNamed(context, AppRoutes.categoriesScreen);
           }, icon: const Icon(Icons.filter_alt)),
           // Theme Switcher
           IconButton(
             onPressed: () {
-              // change the theme
               ref.read(themeProvider.notifier).changeTheme();
             },
             icon: const Icon(Icons.brightness_4),

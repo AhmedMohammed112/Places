@@ -60,7 +60,7 @@ class _LocationInputState extends State<LocationInput> {
 
   @override
   Widget build(BuildContext context) {
-    Widget previewContent = Center(child: MyText(text: 'No Location Selected',style: Theme.of(context).textTheme.labelMedium));
+    Widget previewContent = Center(child: MyText(text: 'No Location Selected',style: Theme.of(context).textTheme.displayLarge));
 
     if (pickedLocation != null) {
       previewContent = ClipRRect(
@@ -96,7 +96,7 @@ class _LocationInputState extends State<LocationInput> {
                 IconButton(
                     onPressed: getCurrentLocation,
                     icon: const Icon(Icons.location_on, )),
-                MyText(text: 'Get Current Location',style: Theme.of(context).textTheme.labelMedium),
+                MyText(text: 'Get Current Location',style: Theme.of(context).textTheme.displayLarge),
               ],
             ),
             Row(
@@ -104,7 +104,7 @@ class _LocationInputState extends State<LocationInput> {
                 IconButton(
                     onPressed: selectOnMap,
                     icon: const Icon(Icons.map, )),
-                MyText(text: 'Select on Map',style: Theme.of(context).textTheme.labelMedium),
+                MyText(text: 'Select on Map',style: Theme.of(context).textTheme.displayLarge),
               ],
             ),
           ],

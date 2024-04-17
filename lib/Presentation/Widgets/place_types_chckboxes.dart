@@ -22,22 +22,18 @@ class _PlacesTypesCheckBoxesState extends State<PlacesTypesCheckBoxes> {
   Widget build(BuildContext context) {
     return Column(
       children: [ 
-        MyText(text: "Categorization",style: Theme.of(context).textTheme.labelMedium),
+        MyText(text: "Categorization",style: Theme.of(context).textTheme.displayLarge),
         const Line(), 
          // create a list of checkboxes for each place type in places types ENUM and add each selected item in selectedPlacesList and make the checkbox deeb purple if it is selected otherwise make it light purple note that place type is an ENUM make it show only if i pressed on a button 
         for (var placeType in placeTypes!)
           CheckboxListTile(
-            // make selection box with border radius
             visualDensity: VisualDensity.compact,
-
             dense: true,
-            selectedTileColor: ColorManager.white,
-            title: MyText(text: placeType.toString().split('.').last,style: Theme.of(context).textTheme.labelMedium),
+            selectedTileColor: ColorManager.newPrimary,
+            title: MyText(text: placeType.toString().split('.').last,style: Theme.of(context).textTheme.displayLarge),
             value: selectedPlaceTypes.contains(placeType.toString().split('.').last),
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)), 
             secondary: const Icon(Icons.place_outlined),
-            side: const BorderSide(color: ColorManager.white, width: 2),
-            onChanged: (value) { 
+            onChanged: (value) {
               setState(() { 
                 if (value!) { 
                   selectedPlaceTypes.add(placeType.toString().split('.').last);
@@ -48,7 +44,6 @@ class _PlacesTypesCheckBoxesState extends State<PlacesTypesCheckBoxes> {
               widget.getTypes(selectedPlaceTypes);
             }, 
           ),
-          
      ], 
     );
   }
